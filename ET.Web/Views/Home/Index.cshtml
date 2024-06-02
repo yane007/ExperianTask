@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SyndicationItemViewModel>
+
+@{
+    ViewBag.Title = "RSS Feed Viewer";
+}
+
+<h2>RSS Feed</h2>
+
+<ul class="mt-5g">
+    @foreach (var item in Model)
+    {
+        <li>
+            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+            <p>@Html.DisplayFor(modelItem => item.Summary)</p>
+            <p><a href="@item.Link">Read more</a></p>
+            <p><small>Published on @item.PublishDate.ToString("f")</small></p>
+        </li>
+    }
+</ul>
